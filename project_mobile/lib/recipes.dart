@@ -6,6 +6,7 @@ import 'package:project_mobile/models/cooking_methods.dart';
 import 'package:project_mobile/models/recipes.dart';
 import 'package:project_mobile/recipe_details.dart';
 
+//ใช้ StatefulWidget เพราะมีการ get ข้อมูลจาก api
 class Recipes extends StatefulWidget {
   final CookingMethodsModel cookingMethods;
 
@@ -46,6 +47,7 @@ class _RecipesState extends State<Recipes> {
     }
   }
 
+  //สร้าง UI หน้าจอ โดยใช้ Expanded ในการขยายพื้นที่ให้กับ ListView.builder ภายในจะแสดงตามจำนวน recipesModel.length โดยแต่ละ recipesModel แสดงเป็น Card ภายในจะมีรูปภาพเมนู ชื่อ และคำอธิบาย ที่ใช้ inkWell เพื่อให้สามารถ click ไปทีี่ Card เพื่อส่งค่า recipesModel[index] ไปให้กับ recipe_details เพื่อแสดงผลตามเมนูที่กด
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(selectedIndex: 1),

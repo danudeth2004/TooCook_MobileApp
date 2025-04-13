@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:project_mobile/components/bottom_nav_bar.dart';
 import 'package:project_mobile/components/contact_container.dart';
 
-class Contact extends StatefulWidget {
+//ใช้ StatelessWidget เพราะข้อมูลที่นำมาแสดงไม่มีการเปลี่ยนแปลง
+class Contact extends StatelessWidget {
   const Contact({super.key});
 
-  @override
-  State<Contact> createState() => _ContactState();
-}
-
-class _ContactState extends State<Contact> {
+  //โดยส่งค่า color, icon, text ไปให้กับ components เพิ่อสร้าง container ของตัวเอง
   @override
   Widget build(BuildContext context) {
     return Scaffold(

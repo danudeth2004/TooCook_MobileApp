@@ -1,4 +1,4 @@
-//Class CookingMethodsModel สำหรับเก็บข้อมูลเกี่ยวกับประเภทของการทำอาหาร
+//Class RecipeDetailsModel สำหรับเก็บข้อมูลเกี่ยวกับวิธีและขั้นตอนการทำอาหารตาม recipe_id
 class RecipeDetailsModel {
   final int id;
   final int recipe_id;

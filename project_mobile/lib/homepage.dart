@@ -5,6 +5,7 @@ import 'package:project_mobile/components/bottom_nav_bar.dart';
 import 'package:project_mobile/models/cooking_methods.dart';
 import 'package:project_mobile/recipes.dart';
 
+//ใช้ StatefulWidget เพราะมีการ get ข้อมูลจาก api
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -40,6 +41,7 @@ class _HomepageState extends State<Homepage> {
     }
   }
 
+  //แสดงหน้าจอ home selectedIndex เป็น 1 และแสดงผล UI ต่างๆ โดย cookingmethod ที่ดึงมาจะแสดงเป็น grid แบ่งเป็นคู่ และใช้ stack ในการพิมพ์ Text ทับ image จากนั้นใช้ inkWell เพื่อให้สามารถ click ที่รูปภาพนั้นได้ และส่ง cookingMethods[index] ไปให้กับ recipes เพื่อแสดงเมนูในการทำอาหารประเภทนั้น ๆ (cookingMethods)
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(selectedIndex: 1,),
@@ -143,6 +145,7 @@ class _HomepageState extends State<Homepage> {
   }
 }
 
+//ฟังก์ชันสำหรับโหลดรูปภาพตามแต่ละ cookingMethods
 String _getImagePath(String methodName) {
   switch (methodName) {
     case 'ทอด':

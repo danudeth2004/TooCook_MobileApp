@@ -6,6 +6,7 @@ import 'package:project_mobile/models/recipe_details.dart';
 import 'package:project_mobile/models/recipes.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+//ใช้ StatefulWidget เพราะมีการ get, post ข้อมูลจาก api
 class RecipeDetails extends StatefulWidget {
   final RecipesModel recipesModel;
 
@@ -48,6 +49,7 @@ class _RecipeDetailsState extends State<RecipeDetails> {
     }
   }
 
+  //postComment สำหรับรับค่าการพิมพ์จาก TextField เพื่อ post และเมื่อส่งสำเร็จจะมี SnackBar ขึ้นว่า โพสต์คอมเมนต์สำเร็จ
   Future<void> postComment() async {
     final comment = _commentController.text.trim();
     if (comment.isEmpty) return;
@@ -90,6 +92,7 @@ class _RecipeDetailsState extends State<RecipeDetails> {
     super.dispose();
   }
 
+  //แสดงผล UI โดยมีการใช้ webview_flutter ในการแสดงหน้าจอ youtube ผ่าน url และแสดงวัตถุดิบและวิธีการทำ จากนั้นมี TextField ที่รอรับการพิมพ์ comment เพื่อส่งไปให้ฟังก์ชัน postComment และแสดงคอมเมนต์ล่าสุดไปเก่าสุดด้านล่าง
   @override
   Widget build(BuildContext context) {
     final videoUrl = widget.recipesModel.youtube_url ?? '';

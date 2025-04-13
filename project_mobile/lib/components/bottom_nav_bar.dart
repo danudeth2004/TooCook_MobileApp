@@ -24,7 +24,7 @@
       );
     }
     
-    //สร้าง BottomNavigationBar ประกอบไปด้วย Random, home, contact
+    //สร้าง BottomNavigationBar ประกอบไปด้วย Random, home, contact โดย currentIndex หรือหน้าจอที่จะแสดงผลจะถูกส่งมาจากหน้าที่เรียกใช้ component นี้
     @override
     Widget build(BuildContext context) {
       return BottomNavigationBar(

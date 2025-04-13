@@ -13,7 +13,7 @@ class ContactContainer extends StatelessWidget {
     required this.text,
   });
 
-  //สร้าง Container ที่ใช้สำหรับแสดงข้อความและไอคอน
+  //สร้าง Container ที่ใช้สำหรับแสดงสี ไอคอน ข้อความ ตามที่ได้รับค่ามา
   @override
   Widget build(BuildContext context) {
     return Container(

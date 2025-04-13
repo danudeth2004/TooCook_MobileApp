@@ -9,6 +9,7 @@ import 'package:project_mobile/models/recipes.dart';
 import 'package:project_mobile/recipe_details.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 
+//ใช้ StatefulWidget เพราะมีการเปลี่ยนแปลงสถานะการสุ่ม และการ get ข้อมูลจาก api
 class RandomMenu extends StatefulWidget {
   const RandomMenu({super.key});
 
@@ -16,6 +17,7 @@ class RandomMenu extends StatefulWidget {
   State<RandomMenu> createState() => _RandomMenuState();
 }
 
+//เก็บ recipesModel เพื่อที่จะส่ง recipesModel ไปให้กับหน้า recipe_details[id] ในการแสดงเมนูที่ถูกต้อง
 class _RandomMenuState extends State<RandomMenu> {
   List<RecipesModel> recipesModel = [];
   final StreamController<int> streamController = StreamController<int>();
@@ -53,6 +55,7 @@ class _RandomMenuState extends State<RandomMenu> {
     }
   }
 
+  // ฟังก์ชันสุ่ม index จากชื่อเมนูใน recipesModel
   void spinWheel() {
     if (recipesModel.isNotEmpty) {
       final index = Random().nextInt(recipesModel.length);
@@ -64,6 +67,7 @@ class _RandomMenuState extends State<RandomMenu> {
     }
   }
 
+  //สร้างวงล้อสุ่มโดยจะแสดงผลชื่อเมนูที่สุ่มได้ก็ต่อเมื่อ showResultAfterSpin = true และจะแสดงทั้งชื่อเมนูและปุ่มสำหรับกดเข้าไปในหน้า recipes_details ของเมนูที่สุ่มได้
   @override
   Widget build(BuildContext context) {
     return Scaffold(
