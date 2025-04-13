@@ -29,9 +29,8 @@ class _RecipesState extends State<Recipes> {
 
   Future<void> fetchData() async {
     try {
-      var method_id = widget.cookingMethods.id;
       var response = await http.get(
-        Uri.parse('http://localhost:8800/recipes/${method_id}'),
+        Uri.parse('http://localhost:8800/recipes/${widget.cookingMethods.id}'),
       );
       if (response.statusCode == 200) {
         List<dynamic> jsonList = jsonDecode(utf8.decode(response.bodyBytes));

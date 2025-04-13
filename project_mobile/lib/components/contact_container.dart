@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//เป็น component ContactContainer แบบ StatelessWidget ที่รับค่า color, icon, text เพื่อแสดงผลที่ต่างกันตามแต่ละประเภท contact
 class ContactContainer extends StatelessWidget {
   final Color color;
   final IconData icon;
@@ -12,6 +13,7 @@ class ContactContainer extends StatelessWidget {
     required this.text,
   });
 
+  //สร้าง Container ที่ใช้สำหรับแสดงข้อความและไอคอน
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,3 +1,4 @@
+//Class CookingMethodsModel สำหรับเก็บข้อมูลเกี่ยวกับประเภทของการทำอาหาร
 class CookingMethodsModel {
   final int id;
   final String method_name;

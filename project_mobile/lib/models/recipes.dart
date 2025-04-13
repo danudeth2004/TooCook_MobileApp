@@ -1,3 +1,4 @@
+//Class RecipesModel สำหรับเก็บข้อมูลเกี่ยวกับประเภทของการทำอาหาร
 class RecipesModel {
   final int id;
   final String recipe_name;

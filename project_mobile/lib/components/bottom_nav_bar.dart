@@ -3,11 +3,13 @@
   import 'package:project_mobile/homepage.dart';
   import 'package:project_mobile/random_menu.dart';
 
+  //เป็น component BottomNavigationBar แบบ StatelessWidget
   class BottomNavBar extends StatelessWidget {
     final int selectedIndex;
 
     const BottomNavBar({super.key, required this.selectedIndex});
 
+    // ฟังก์ชันนี้จะถูกเรียกเมื่อผู้ใช้แตะที่ไอคอนใน BottomNavigationBar และมีการสร้าง Route ไปยังหน้าที่ index
     void _onItemTapped(BuildContext context, int index) {
 
       final List<Widget> destinations = [
@@ -21,7 +23,8 @@
         (route) => false,
       );
     }
-
+    
+    //สร้าง BottomNavigationBar ประกอบไปด้วย Random, home, contact
     @override
     Widget build(BuildContext context) {
       return BottomNavigationBar(
